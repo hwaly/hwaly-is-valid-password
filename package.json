@@ -1,6 +1,6 @@
 {
     "name": "hwaly-validate",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "오류 검사",
     "main": "password.js",
     "repository": {

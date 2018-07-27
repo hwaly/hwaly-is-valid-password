@@ -70,7 +70,7 @@ var isValidPassword = (function () {
 
         // minlength 체크
         var minlength = 10,
-            value = $.trim(password.val());
+            value = password.value.trim();
 
         if (minlength && (value.length < minlength)) {
             return returnResult(character.otherMessage.minlength(minlength));
