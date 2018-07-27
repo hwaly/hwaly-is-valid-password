@@ -1,0 +1,18 @@
+{
+    "name": "hwaly-validate",
+    "version": "1.0.0",
+    "description": "오류 검사",
+    "main": "password.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hwaly/hwaly-validate.git"
+    },
+    "keywords": [
+        "library",
+        "javascript",
+        "validate"
+    ],
+    "author": "연병화 (http://github.com/hwaly/)",
+    "license": "BSD",
+    "homepage": "https://github.com/hwaly/hwaly-validate#readme"
+}
