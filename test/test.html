@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../src/index.js"></script>
+</head>
+<body>
+<form class="form1" action="">
+    <input type="text" name="id"><br>
+    <input type="text" name="password"><br>
+    <input type="text" name="check_password"><br>
+    <label><input type="radio" name="radio">radio1</label>
+    <label><input type="radio" name="radio">radio2</label><br>
+    <label><input type="radio" name="checkbox[]">checkbox1</label>
+    <label><input type="radio" name="checkbox[]">checkbox2</label><br>
+    <textarea name="textarea"></textarea>
+</form>
+
+<form class="form2" action=""></form>
+
+<script>
+    const validate = new Validate();
+
+    validate.setForm('.form1');
+
+    validate.addRule('checkbox[]', {
+        message: '아이디를 입력해주세요',
+        required: true,
+        focus: false
+    });
+    console.log(`checkbox[]: ${validate.getElements('checkbox[]')}`);
+    console.log(`checkbox[]:checked: ${validate._isEmpty('checkbox[]')}`);
+    document.querySelector('[name="checkbox[]"]').checked = true;
+    console.log(`checkbox[]:checked: ${validate._isEmpty('checkbox[]')}`);
+
+    validate.removeRule('checkbox[]');
+    console.log(`checkbox[]: ${validate.getElements('checkbox[]')}`);
+
+    validate.addRule('id', {
+        message: '아이디를 입력해주세요',
+        required: true,
+        focus: false
+    });
+    validate.addRule('password', {
+        message: '비밀번호를 입력해주세요',
+        required: true
+    });
+    validate.removeRule('id');
+
+    console.log(validate.getRules());
+    console.log(validate.validate());
+</script>
+
+</body>
+</html>
